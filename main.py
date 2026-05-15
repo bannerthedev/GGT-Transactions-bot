@@ -6,11 +6,13 @@ import logging
 import discord
 from discord.ext import commands
 from typing import Optional, List, Dict, Set
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 
 # ---------------- CONFIG (fill these) ----------------
-TOKEN = "MTQ5OTIzNjcxMTU0MzA3ODk1Mg.Gpgi0T.0gG1llWUK2EJNKaUsu02P3cyVdRCEa5GcJTfP0"
 GUILD_ID = 1472622389321011212  # your guild id as int
 
 MATCH_TIMES_CHANNEL_ID = 1499237606154702848
@@ -1760,4 +1762,4 @@ async def print_guild_commands():
         logging.exception("Failed to fetch guild commands")
 
 if __name__ == "__main__":
-    bot.run(TOKEN)
+    bot.run(os.getenv("TOKEN"))
